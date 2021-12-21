@@ -1,13 +1,10 @@
-def rearrange_digits(input_list):
-    """
-    Rearrange Array Elements so as to form two number such that their sum is maximum.
+from Quick_Sort import quicksort
 
-    Args:
-       input_list(list): Input List
-    Returns:
-       (int),(int): Two maximum sums
-    """
-    pass
+
+def rearrange_digits(input_list):
+    size = len(input_list)
+    if size <= 2:
+        return input_list
 
 
 def test_function(test_case):
