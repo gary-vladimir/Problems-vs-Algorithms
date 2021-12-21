@@ -1,13 +1,24 @@
 def rotated_array_search(input_list, number):
-    """
-    Find the index by searching in a rotated sorted array
+    size = len(input_list)
+    if size == 0 or (size == 1 and input_list[0] != number):
+        return -1
 
-    Args:
-       input_list(array), number(int): Input array to search and the target
-    Returns:
-       int: Index or -1
-    """
-    return 1
+    left, right = 0, size-1
+    while left <= right:
+        mid = (left + right)//2
+        if input_list[mid] == number:
+            return mid
+        if input_list[left] <= input_list[mid]:
+            if input_list[left] <= number < input_list[mid]:
+                right = mid - 1
+            else:
+                left = mid + 1
+        else:
+            if input_list[mid] < number <= input_list[right]:
+                left = mid + 1
+            else:
+                right = mid - 1
+    return -1
 
 
 def linear_search(input_list, number):
