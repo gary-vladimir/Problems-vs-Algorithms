@@ -1,11 +1,16 @@
 def sort_012(input_list):
-    """
-    Given an input array consisting on only 0, 1, and 2, sort the array in a single traversal.
+    zeros, ones, twos = [], [], []
+    for num in input_list:
+        if num == 0:
+            zeros.append(num)
+        elif num == 1:
+            ones.append(num)
+        elif num == 2:
+            twos.append(num)
+        else:
+            raise Exception("Invalid array input")
 
-    Args:
-       input_list(list): List to be sorted
-    """
-    pass
+    return zeros + ones + twos
 
 
 def test_function(test_case):
