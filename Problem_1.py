@@ -13,6 +13,9 @@ def helper(number):
 
 
 def sqrt(number):
+    if number == None:
+        return None
+
     return -1 if number < 0 else 1 if number == 1 else helper(number)
 
 
@@ -22,3 +25,4 @@ print("Pass" if (0 == sqrt(0)) else "Fail")
 print("Pass" if (4 == sqrt(16)) else "Fail")
 print("Pass" if (1 == sqrt(1)) else "Fail")
 print("Pass" if (5 == sqrt(27)) else "Fail")
+print("Pass" if (None == sqrt(None)) else "Fail")
