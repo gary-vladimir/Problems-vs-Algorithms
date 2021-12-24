@@ -37,4 +37,4 @@ return -1
 
 The time complexity of this program is: `O(logn)`
 
-The space complexity for this program is: `O(logn)`
+The space complexity for this program is: `O(1)` because it does not use recursion
