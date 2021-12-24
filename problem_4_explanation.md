@@ -4,34 +4,30 @@
 
 ## Solution Explanation
 
-The firs thing I did was to create three empty arrays.
+The first thing I did, was to check for invalid input
 
 ```python
-zeros, ones, twos = [], [], []
+if len(input_list) <= 0:
+    return input_list
 ```
 
-Then, iterate through the input_list and for each character check if the num is equal to 0, 1, or 2 and append the num to the correspondent array
+Then, I used the numpy to see how many times an element was present
 
 ```python
-for num in input_list:
-    if num == 0:
-        zeros.append(num)
-    elif num == 1:
-        ones.append(num)
-    elif num == 2:
-        twos.append(num)
-    else:
-        raise Exception("Invalid array input")
+unique, counts = numpy.unique(numpy.array(input_list), return_counts=True)
+zeros = counts[0]
+ones = counts[1]
+twos = counts[2]
 ```
 
-Finally, add all arrays together
+Finally, I returned the arrays multiplied by how many times they were present in the correct order
 
 ```python
-return zeros + ones + twos
+return ([0] * zeros) + ([1] * ones) + ([2] * twos)
 ```
 
 ## Run-time Analysis
 
 The time complexity of this program is: `O(n)`
 
-The space complexity for this program is: `O(3)`
+The space complexity for this program is: `O(1)`
