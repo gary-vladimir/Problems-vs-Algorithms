@@ -1,16 +1,16 @@
-def sort_012(input_list):
-    zeros, ones, twos = [], [], []
-    for num in input_list:
-        if num == 0:
-            zeros.append(num)
-        elif num == 1:
-            ones.append(num)
-        elif num == 2:
-            twos.append(num)
-        else:
-            raise Exception("Invalid array input")
+import numpy
 
-    return zeros + ones + twos
+
+def sort_012(input_list):
+    if len(input_list) <= 0:
+        return input_list
+
+    unique, counts = numpy.unique(numpy.array(input_list), return_counts=True)
+    zeros = counts[0]
+    ones = counts[1]
+    twos = counts[2]
+
+    return ([0] * zeros) + ([1] * ones) + ([2] * twos)
 
 
 def test_function(test_case):
